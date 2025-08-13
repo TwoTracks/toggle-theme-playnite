@@ -1156,7 +1156,7 @@
                             <StackPanel Grid.Row="1" Orientation="Horizontal">
                                 <StackPanel.Style>
                                     <Style TargetType="StackPanel">
-                                        <Setter Property="Margin" Value="98,48,0,-88" />
+                                        <Setter Property="Margin" Value="98,28,0,-78" />
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
                                                 <Setter Property="Margin" Value="56,0,0,0" />
@@ -1171,7 +1171,7 @@
                                     Margin="0,-4"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    Opacity="1"
+                                    Opacity="0.67"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Source="{ThemeFileBinding ActiveFilterPreset.Name,
                                                               PathFormat='Icons/Filter/{0}.png'}"
