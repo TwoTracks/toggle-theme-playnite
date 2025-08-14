@@ -100,3 +100,9 @@ Packages:
     Changelog:
       - Fix Switch and Steamdeck icons
       - Fix Game Menu border
+  - Version: 1.5.2
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-08-14
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.5.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_5_2.pthm
+    Changelog:
+      - UI bugfixes
