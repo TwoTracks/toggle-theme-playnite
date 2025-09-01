@@ -1101,7 +1101,10 @@
                                 </FadeImage.Style>
                             </FadeImage>
 
-                            <Border Grid.Row="1" BorderBrush="{StaticResource DefaultBorderBrush}" HorizontalAlignment="Stretch">
+                            <Border
+                                Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                BorderBrush="{StaticResource DefaultBorderBrush}">
                                 <Border.Style>
                                     <Style TargetType="Border">
                                         <Setter Property="BorderThickness" Value="0" />
@@ -1135,8 +1138,8 @@
                                         Width="120"
                                         Height="64"
                                         Margin="0"
+                                        HorizontalAlignment="Right"
                                         ContentTemplate="{DynamicResource ButtonPromptLB}"
-                                    HorizontalAlignment="Right"
                                         Focusable="False"
                                         Opacity="0.67">
                                         <ContentControl.Style>
@@ -1149,7 +1152,7 @@
                                             </Style>
                                         </ContentControl.Style>
                                     </ContentControl>
-                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
                                         <StackPanel.Style>
                                             <Style TargetType="StackPanel">
                                                 <Style.Triggers>
@@ -1160,17 +1163,17 @@
                                             </Style>
                                         </StackPanel.Style>
                                         <Image
-                                        x:Name="DefaultImage"
-                                        Width="40"
-                                        Height="40"
-                                        Margin="0,-4"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        Opacity="0.67"
-                                        RenderOptions.BitmapScalingMode="Fant"
-                                        Source="{ThemeFileBinding ActiveFilterPreset.Name,
-                                                                  PathFormat='Icons/Filter/{0}.png'}"
-                                        Stretch="Uniform">
+                                            x:Name="DefaultImage"
+                                            Width="40"
+                                            Height="40"
+                                            Margin="0,-4"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Opacity="0.67"
+                                            RenderOptions.BitmapScalingMode="Fant"
+                                            Source="{ThemeFileBinding ActiveFilterPreset.Name,
+                                                                      PathFormat='Icons/Filter/{0}.png'}"
+                                            Stretch="Uniform">
                                             <Image.Style>
                                                 <Style TargetType="Image">
                                                     <Setter Property="Opacity" Value="1" />
@@ -1183,12 +1186,12 @@
                                             </Image.Style>
                                         </Image>
                                         <TextBlock
-                                        Margin="16,0,0,0"
-                                        VerticalAlignment="Center"
-                                        FontSize="32"
-                                        FontWeight="Bold"
-                                        Style="{DynamicResource TextBlockBaseStyle}"
-                                        Text="{Binding ActiveFilterPreset.Name}" />
+                                            Margin="16,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="32"
+                                            FontWeight="Bold"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{Binding ActiveFilterPreset.Name}" />
                                     </StackPanel>
 
                                     <ContentControl
@@ -1199,7 +1202,7 @@
                                         HorizontalAlignment="Left"
                                         ContentTemplate="{DynamicResource ButtonPromptRB}"
                                         Focusable="False"
-                                        Opacity="0.67" >
+                                        Opacity="0.67">
                                         <ContentControl.Style>
                                             <Style TargetType="ContentControl">
                                                 <Style.Triggers>
@@ -1245,9 +1248,7 @@
                                     KeyboardNavigation.DirectionalNavigation="Once"
                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                     ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                    VirtualizingStackPanel.IsVirtualizing="True"
-                                    Focusable="False"
-                                            pbeh:FocusBahaviors.OnVisibilityFocus="True">
+                                    VirtualizingStackPanel.IsVirtualizing="True">
                                     <ListBoxEx.Style>
                                         <Style TargetType="ListBoxEx">
                                             <Setter Property="Background" Value="Transparent" />
