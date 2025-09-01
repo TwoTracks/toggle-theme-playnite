@@ -1089,78 +1089,18 @@
                                 x:Name="PART_ImageBackground"
                                 Grid.RowSpan="5"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Top"
-                                Visibility="Collapsed" />
-                            <DockPanel>
-                                <DockPanel.Style>
-                                    <Style TargetType="DockPanel">
-                                        <Setter Property="Grid.Row" Value="2" />
+                                VerticalAlignment="Top">
+                                <FadeImage.Style>
+                                    <Style TargetType="FadeImage">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
-                                                <Setter Property="Grid.RowSpan" Value="2" />
+                                                <Setter Property="Visibility" Value="Collapsed" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
-                                </DockPanel.Style>
-                                <Filters
-                                    x:Name="PART_ElemFilters"
-                                    Margin="0,-96,-8,0"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
+                                </FadeImage.Style>
+                            </FadeImage>
 
-                                <FiltersAdditional
-                                    x:Name="PART_ElemFiltersAdditional"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
-
-                                <ContentControl
-                                    x:Name="PART_ContentFilterItems"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
-                                <ListBoxEx
-                                    x:Name="PART_ListGameItems"
-                                    BorderBrush="{DynamicResource DefaultBorderBrush}"
-                                    DockPanel.Dock="Right"
-                                    KeyboardNavigation.DirectionalNavigation="Once"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                    VirtualizingStackPanel.IsVirtualizing="True"
-                                    Focusable="False"
-                                            pbeh:FocusBahaviors.OnVisibilityFocus="True">
-                                    <ListBoxEx.Style>
-                                        <Style TargetType="ListBoxEx">
-                                            <Setter Property="Background" Value="Transparent" />
-                                            <Setter Property="BorderThickness" Value="0" />
-                                            <Setter Property="Margin" Value="0,-64,0,0" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
-                                                    <Setter Property="Margin" Value="-1,-16,-1,0" />
-                                                    <Setter Property="Background" Value="{StaticResource MainBackgourndBrush}" />
-                                                    <Setter Property="BorderThickness" Value="1" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </ListBoxEx.Style>
-                                </ListBoxEx>
-                            </DockPanel>
-                            <TextBlock
-                                Grid.Row="2"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="40"
-                                Text="{DynamicResource LOCNoGamesFound}"
-                                TextAlignment="Center">
-                                <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock">
-                                        <Setter Property="Visibility" Value="Collapsed" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
-                                                <Setter Property="Visibility" Value="Visible" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
                             <Border Grid.Row="1" BorderBrush="{StaticResource DefaultBorderBrush}" HorizontalAlignment="Stretch">
                                 <Border.Style>
                                     <Style TargetType="Border">
@@ -1174,7 +1114,7 @@
                                     </Style>
                                 </Border.Style>
 
-                                <Grid Background="{StaticResource MainBackgourndBrush}">
+                                <Grid>
                                     <Grid.Style>
                                         <Style TargetType="Grid">
                                             <Setter Property="Margin" Value="98,28,0,-78" />
@@ -1271,8 +1211,76 @@
                                         </ContentControl.Style>
                                     </ContentControl>
                                 </Grid>
-
                             </Border>
+                            <DockPanel>
+                                <DockPanel.Style>
+                                    <Style TargetType="DockPanel">
+                                        <Setter Property="Grid.Row" Value="2" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                                <Setter Property="Grid.RowSpan" Value="2" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DockPanel.Style>
+                                <Filters
+                                    x:Name="PART_ElemFilters"
+                                    Margin="0,0,-64,0"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+
+                                <FiltersAdditional
+                                    x:Name="PART_ElemFiltersAdditional"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+
+                                <ContentControl
+                                    x:Name="PART_ContentFilterItems"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+                                <ListBoxEx
+                                    x:Name="PART_ListGameItems"
+                                    BorderBrush="{DynamicResource DefaultBorderBrush}"
+                                    DockPanel.Dock="Right"
+                                    KeyboardNavigation.DirectionalNavigation="Once"
+                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                    VirtualizingStackPanel.IsVirtualizing="True"
+                                    Focusable="False"
+                                            pbeh:FocusBahaviors.OnVisibilityFocus="True">
+                                    <ListBoxEx.Style>
+                                        <Style TargetType="ListBoxEx">
+                                            <Setter Property="Background" Value="Transparent" />
+                                            <Setter Property="BorderThickness" Value="0" />
+                                            <Setter Property="Margin" Value="0" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                                    <Setter Property="Margin" Value="-1,0" />
+                                                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ListBoxEx.Style>
+                                </ListBoxEx>
+                            </DockPanel>
+                            <TextBlock
+                                Grid.Row="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="40"
+                                Text="{DynamicResource LOCNoGamesFound}"
+                                TextAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                             <Grid Grid.Row="3" Margin="0">
                                 <Grid.Style>
                                     <Style TargetType="Grid">
