@@ -170,6 +170,10 @@
         Name: Platform-Agnostic
         Files:
           - Images\ButtonPrompts\Others\Generic.xaml
+      Ally:
+        Name: ROG Ally
+        Files:
+          - Images\ButtonPrompts\Others\Ally.xaml
 Variables:
   HideChangeView:
     Title: Hide Change View Button
