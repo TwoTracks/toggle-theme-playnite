@@ -122,7 +122,7 @@ Packages:
   - Version: 1.5.6
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2025-09-02
-    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v.1.5.6/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_5_6.pthm
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.5.6/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_5_6.pthm
     Changelog:
       - ✨ Add ROG Ally button layout (requires ThemeOptions) ✨
       - Go to Settings ➡️ Theme Options ➡️ Button Layout to check it out
