@@ -629,7 +629,7 @@
                                         Text="{DynamicResource LOCTimePlayed}" />
                                 </StackPanel>
                                 <TextBlock
-                                    Margin="72,0,12,0"
+                                    Margin="48,0,12,0"
                                     Opacity="0.75"
                                     Style="{StaticResource FluentIconStyle}"
                                     Text="&#xec92;" />
@@ -646,7 +646,7 @@
                                         Text="{DynamicResource LOCGameLastActivityTitle}" />
                                 </StackPanel>
                                 <TextBlock
-                                    Margin="72,0,12,0"
+                                    Margin="48,0,12,0"
                                     Opacity="0.75"
                                     Style="{StaticResource FluentIconStyle}"
                                     Text="&#xe787;" />
@@ -662,6 +662,27 @@
                                         Style="{DynamicResource TextBlockBaseStyle}"
                                         Text="{DynamicResource LOCGameReleaseDateTitle}" />
                                 </StackPanel>
+                                <Image
+                                    Width="60"
+                                    Height="60"
+                                    Margin="48,0,12,0"
+                                    VerticalAlignment="Top"
+                                    Opacity="0.75"
+                                    Source="{ThemeFileBinding Library,
+                                                              PathFormat='Icons/Library/{0}.png'}"
+                                    Stretch="UniformToFill" />
+                                <StackPanel>
+                                    <TextBlock
+                                        FontFamily="{DynamicResource FontDefaultBold}"
+                                        Style="{DynamicResource TextBlockBaseStyle}"
+                                        Text="{Binding Library}" />
+                                    <TextBlock
+                                        Margin="0,0,0,10"
+                                        FontSize="22"
+                                        Opacity="0.75"
+                                        Style="{DynamicResource TextBlockBaseStyle}"
+                                        Text="{DynamicResource LOCGameProviderTitle}" />
+                                </StackPanel>
 
                                 <!--  Achievement entry  -->
                                 <StackPanel Orientation="Horizontal">
@@ -676,7 +697,7 @@
                                         </Style>
                                     </StackPanel.Style>
                                     <TextBlock
-                                        Margin="72,0,12,0"
+                                        Margin="48,0,12,0"
                                         Opacity="0.75"
                                         Style="{StaticResource FluentIconStyle}"
                                         Text="&#xe734;" />
