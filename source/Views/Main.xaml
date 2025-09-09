@@ -514,7 +514,6 @@
         </Setter>
     </Style>
 
-
     <Style x:Key="NowPlayingWindowStyle" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -1282,6 +1281,8 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
+                            
+                            <!--Menu Bar / Dock-->
                             <Grid Grid.Row="3" Margin="0">
                                 <Grid.Style>
                                     <Style TargetType="Grid">
@@ -1342,7 +1343,8 @@
                                             MinWidth="72"
                                             Margin="32,0,16,0"
                                             VerticalAlignment="Center"
-                                            Style="{DynamicResource ButtonTopMenu}">
+                                            Style="{DynamicResource ButtonTopMenu}"
+                                            Tag="{StaticResource LOCMoreAction}">
                                             <TextBlock
                                                 Margin="8,9"
                                                 FontSize="52"
@@ -1355,7 +1357,8 @@
                                             Height="72"
                                             MinWidth="72"
                                             Margin="8,0,16,0"
-                                            VerticalAlignment="Center">
+                                            VerticalAlignment="Center"
+                                            Tag="{StaticResource LOCNotifications}">
                                             <ButtonEx.Style>
                                                 <Style BasedOn="{StaticResource ButtonTopMenu}" TargetType="{x:Type Button}">
                                                     <Style.Triggers>
@@ -1387,7 +1390,8 @@
                                             MinWidth="72"
                                             Margin="8,0,16,0"
                                             VerticalAlignment="Center"
-                                            Style="{DynamicResource ButtonTopMenu}">
+                                            Style="{DynamicResource ButtonTopMenu}"
+                                            Tag="{StaticResource LOCUpdaterWindowTitle}">
                                             <TextBlock
                                                 Margin="2"
                                                 HorizontalAlignment="Center"
@@ -1405,7 +1409,8 @@
                                             Margin="8,0,16,0"
                                             VerticalAlignment="Center"
                                             IsChecked="{Settings Fullscreen.HorizontalLayout,
-                                                                 Mode=TwoWay}">
+                                                                 Mode=TwoWay}"
+                                            Tag="{StaticResource LOCGridViewLabel}">
                                             <CheckBoxEx.Style>
                                                 <Style BasedOn="{StaticResource ChangeViewButton}" TargetType="CheckBoxEx">
                                                     <Style.Triggers>
@@ -1440,6 +1445,8 @@
                                     Focusable="False"
                                     Opacity="0.67" />
                             </Grid>
+                            
+                            <!--Button Hints-->
                             <Grid Grid.Row="4" Height="70">
                                 <Grid.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -1514,6 +1521,8 @@
                                     </StackPanel>
                                 </Border>
                             </Grid>
+                            
+                            <!--Top Bar-->
                             <Grid
                                 Grid.Row="0"
                                 Height="80"
