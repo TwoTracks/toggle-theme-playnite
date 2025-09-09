@@ -1281,8 +1281,8 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            
-                            <!--Menu Bar / Dock-->
+
+                            <!--  Menu Bar / Dock  -->
                             <Grid Grid.Row="3" Margin="0">
                                 <Grid.Style>
                                     <Style TargetType="Grid">
@@ -1445,8 +1445,8 @@
                                     Focusable="False"
                                     Opacity="0.67" />
                             </Grid>
-                            
-                            <!--Button Hints-->
+
+                            <!--  Button Hints  -->
                             <Grid Grid.Row="4" Height="70">
                                 <Grid.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -1521,8 +1521,8 @@
                                     </StackPanel>
                                 </Border>
                             </Grid>
-                            
-                            <!--Top Bar-->
+
+                            <!--  Top Bar  -->
                             <Grid
                                 Grid.Row="0"
                                 Height="80"

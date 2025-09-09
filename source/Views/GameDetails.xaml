@@ -34,10 +34,9 @@
                                     Text="{Binding SelectedGame.DisplayName}"
                                     TextWrapping="Wrap" />
                                 <StackPanel Margin="0,0,0,32" Orientation="Horizontal">
-                                    <TextBlock
-                                        Margin="0,0,12,0">
+                                    <TextBlock Margin="0,0,12,0">
                                         <TextBlock.Style>
-                                            <Style TargetType="TextBlock" BasedOn="{StaticResource FluentIconStyle}">
+                                            <Style BasedOn="{StaticResource FluentIconStyle}" TargetType="TextBlock">
                                                 <Setter Property="Text" Value="&#xe734;" />
                                                 <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                                                 <Style.Triggers>
