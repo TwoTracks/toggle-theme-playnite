@@ -807,10 +807,30 @@
                                         Margin="32,-4,0,0"
                                         VerticalAlignment="Center"
                                         FontSize="42"
-                                        Style="{DynamicResource TextBlockBaseStyle}"
                                         Text="{PluginSettings Plugin=MoData,
-                                                              Path=PercentChargeString}" />
+                                                              Path=PercentChargeString}">
+                                        <TextBlock.Style>
+                                            <Style BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Settings Fullscreen.ShowBattery}" Value="False">
+                                                        <Setter Property="Visibility" Value="Hidden" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                     <Grid Margin="0,7,0,0">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Settings Fullscreen.ShowBattery}" Value="False">
+                                                        <Setter Property="Visibility" Value="Hidden" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
                                         <ContentControl
                                             x:Name="PART_MoDetailsElemBatteryStatus"
                                             Margin="0,-8,10,0"
