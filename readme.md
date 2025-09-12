@@ -41,6 +41,9 @@ Easily return to your game from the home screen
 ![](screenshots/game-details.png)
 ExtraMetadataLoader Support for game logos
 
+![](screenshots/recommended-settings.png)
+Customizable Accent Colors
+
 ![](screenshots/game-menu.png)
 ![](screenshots/home-filter-states.png)
 ![](screenshots/home.png)
@@ -52,7 +55,29 @@ Technically you can do whatever you want but the them looks and functions best w
 
 ### Playnite Settings
 
-![](screenshots/recommended-settings.png)
+The settings aren't hard and fast rules but something I recommend for the best experience. note that lower Row and Column values might need larger spacing so covers stay the right size. Also note that you will need high resolution covers (aim for ~60% screen height)
+
+#### Portrait Covers
+Settings tested for covers ranging from 2:3 to 3:4 aspect ratio
+|Setting|Value|(3:4 aspect ratio only)|
+|-------|-----|---|
+|Columns|5|4|
+|Rows|2|2|
+|Item Spacing|90|200|
+
+#### Square Covers
+
+Change covers in Playnite Desktop Mode Settings
+
+|Setting|Value||
+|-------|-----|---|
+|Columns|3|4|
+|Rows|1|2|
+|Item Spacing|128|90|
+
+## Required Extensions
+
+- ThemeOptions
 
 ## Recommended Extensions
 
