@@ -134,3 +134,12 @@ Packages:
       - ✨ Add Preview Images for Button Layouts ✨ - Go to Settings ➡️ Theme Options ➡️ Button Layout to check it out
       - ✨ Added Library Icons for Amazon, Battle.net, EA, Epic, Fanatical, GOG, Humble, itch.io, Playnite, Riot, Rockstar Games, Playstation, Steam, Ubisoft, and Xbox ✨
       - 🚀 Reduced theme size (from 7.1MB to 4.6MB) by removing unused assets from distributed theme 🚀
+  - Version: 1.6.1
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-09-12
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.6.1/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_6_1.pthm
+    Changelog:
+      - '✨ QoL: Added Labels for persistent dock items ✨'
+      - "⚒️ UI bugfixes: MoData details pane respects user's battery display settings and SuccessStory game achievement completionist stars (platinum trophies) show up when you have all achievements unlocked ⚒️"
+      - ⚠️ Officially made ThemeOptions a REQUIRED extension. If you don't have it installed yet, install it now or you'll meet Clippy ⚠️
+      - Recommended Extensions are still ExtraMetadataLoader, Now Playing, SuccessStory, SuccessStory Fullscreen Helper, and MoData
