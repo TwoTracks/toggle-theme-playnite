@@ -1019,6 +1019,7 @@
     <Content Include="Images\Buttons\Xbox\ButtonPromptX.Png" />
     <Content Include="Images\Buttons\Xbox\ButtonPromptY.Png" />
     <Content Include="Images\custom_cover_background.png" />
+    <Content Include="Images\required-extensions.png" />
     <Content Include="LocSource.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
