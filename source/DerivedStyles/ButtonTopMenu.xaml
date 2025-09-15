@@ -11,7 +11,7 @@
                     <Grid>
                         <!-- Focus label - appears above checkbox when focused -->
                         <TextBlock
-            Margin="0,-56,0,0"
+            Margin="-85,-56,-85,0"
             FontSize="16"
             FontWeight="Bold"
             Foreground="{DynamicResource TextBrush}"
