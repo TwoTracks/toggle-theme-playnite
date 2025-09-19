@@ -149,3 +149,11 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.6.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_6_2.pthm
     Changelog:
       - 🐛 Fixed square cover UI bug in NowPlaying and 16:10 UI bug
+  - Version: 1.6.4
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-09-18
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.6.4/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_6_4.pthm
+    Changelog:
+      - 🐛 Fixed square cover UI bug in Game Details
+      - 🐛 Fixed longstanding UI issue for editing game fields
+      - ✨ Add ability to choose what data is shown in Game Details. It's recommended to only show all items if you're using portrait covers
