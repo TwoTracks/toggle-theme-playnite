@@ -1414,13 +1414,11 @@
                                             Style="{DynamicResource ButtonTopMenu}"
                                             Tag="{StaticResource LOCUpdaterWindowTitle}">
                                             <TextBlock
-                                                Margin="2"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"
-                                                FontFamily="{StaticResource FontIcoFont}"
-                                                FontSize="30"
+                                                Margin="10,9,8,9"
+                                                FontSize="46"
                                                 Foreground="{DynamicResource PrimaryBrush}"
-                                                Text="&#xEF08;" />
+                                                Style="{StaticResource FluentIconStyle}"
+                                                Text="&#xe896;" />
                                         </ButtonEx>
                                         <CheckBoxEx
                                             x:Name="ChangeViewButton"

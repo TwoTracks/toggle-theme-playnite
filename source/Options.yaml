@@ -186,6 +186,11 @@ Variables:
     LocKey: LOCHideChangeView
     Type: Boolean
     Default: true
+  ZoomCovers:
+    Title: Zoom Game Covers on Focus
+    LocKey: LOCZoomCovers
+    Type: Boolean
+    Default: true
   GameDetailsHeader:
     Title: Game Details Info
     Type: Header

@@ -127,6 +127,7 @@
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="True" />
                                 <Condition Binding="{Settings Fullscreen.HorizontalLayout}" Value="True" />
+                                <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ZoomCovers]}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.ExitActions>
                                 <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
