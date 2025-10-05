@@ -121,6 +121,12 @@
                                 </TextBlock.Effect>
                             </TextBlock>
                         </Grid>
+                        <Button
+                            x:Name="Clicker"
+                            Grid.Row="0"
+                            Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                            Opacity="0"
+                            Visibility="Hidden" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
@@ -136,6 +142,29 @@
                                 <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
                             </MultiDataTrigger.EnterActions>
                         </MultiDataTrigger>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames
+                                            BeginTime="0:0:0.25"
+                                            Storyboard.TargetName="Clicker"
+                                            Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Hidden}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Clicker" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="MainBorder" Property="Visibility" Value="Visible" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
