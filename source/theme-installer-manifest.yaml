@@ -166,7 +166,7 @@ Packages:
       - ✨ Add ability to not zoom game covers on focus
   - Version: 1.6.7
     RequiredApiVersion: 2.8.0
-    ReleaseDate: 2025-00-12
+    ReleaseDate: 2025-10-12
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.6.7/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_6_7.pthm
     Changelog:
       - 🐛 Fixed game achievement UI inconsistency between unlocked and locked achievement
