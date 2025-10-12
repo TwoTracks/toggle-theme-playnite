@@ -1108,9 +1108,12 @@
                                 x:Name="PART_ImageBackground"
                                 Grid.RowSpan="5"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Top">
+                                VerticalAlignment="Top"
+                                RenderOptions.BitmapScalingMode="LowQuality"
+                                Source="{Binding SelectedGame.IconObjectCached, FallbackValue={ThemeFile Images/applogo.png}}">
                                 <FadeImage.Style>
                                     <Style TargetType="FadeImage">
+                                        <Setter Property="Visibility" Value="Collapsed" />
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
                                                 <Setter Property="Visibility" Value="Collapsed" />
@@ -1119,7 +1122,32 @@
                                     </Style>
                                 </FadeImage.Style>
                             </FadeImage>
-
+                            <Image
+                                Grid.RowSpan="5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Opacity="0.5"
+                                RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                Source="{Binding SelectedGame.IconObjectCached, FallbackValue={ThemeFile Images/applogo.png}}"
+                                Stretch="UniformToFill">
+                                <Image.Effect>
+                                    <BlurEffect Radius="16" />
+                                </Image.Effect>
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <Rectangle Grid.RowSpan="5">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="{ThemeFile 'Images/button-full.png'}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
                             <Border
                                 Grid.Row="1"
                                 HorizontalAlignment="Stretch"
