@@ -33,6 +33,9 @@
         <sys:Double x:Key="FontSizeSmall">36</sys:Double>
         <sys:Double x:Key="FontSize">48</sys:Double>
 
+        <GridLength x:Key="ProgressWindowWidth">1280</GridLength>
+
+
         <sys:String x:Key="BgStyle">icons</sys:String>
 
         <sys:Double x:Key="FixedFontSizeSmall">24</sys:Double>

@@ -108,5 +108,41 @@
         </Setter>
     </Style>
 
+    <Style
+        x:Key="ProgressWindowProgressBarStyle"
+        BasedOn="{StaticResource {x:Type ProgressBar}}"
+        TargetType="ProgressBar">
+        <Setter Property="Height" Value="48" />
+        <Setter Property="Margin" Value="0,48,0,64" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource FixedFontSizeSmall}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border
+                        Margin="-1"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="24"
+                        SnapsToDevicePixels="true">
+                        <Grid x:Name="PART_Track" ClipToBounds="true">
+                            <Rectangle
+                                x:Name="PART_Indicator"
+                                HorizontalAlignment="Left"
+                                Fill="{TemplateBinding Foreground}"
+                                RadiusX="24"
+                                RadiusY="24" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
