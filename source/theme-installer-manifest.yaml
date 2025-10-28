@@ -182,3 +182,10 @@ Packages:
       - ✨ Use W11 LAN icon for wired networks to be consistent with the OS)
       - ✨ Make WiFi icon more clear with faded empty bars being shown
       - ✨ Add support for ThemeOptions extensions feature
+  - Version: 1.8.0
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2025-10-28
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.8.0/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_8_0.pthm
+    Changelog:
+      - ✨ Updated progress window - fixed text overflow, better readability and user communication
+      - ⚠️ Requires Playnite Version 10.42 or greater (try to update Playnite before installing)
