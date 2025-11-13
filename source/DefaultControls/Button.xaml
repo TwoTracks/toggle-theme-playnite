@@ -196,11 +196,11 @@
                                                 </Border>
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-6"
-                                                        Background="{DynamicResource TextBrush}"
-                                                        BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="2"
-                                                        CornerRadius="40"
+                                                        Margin="-10"
+                                                        Background="#00000000"
+                                                        BorderBrush="{DynamicResource PrimaryBrush}"
+                                                        BorderThickness="4"
+                                                        CornerRadius="100"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -211,6 +211,13 @@
                                                                         ShadowDepth="8"
                                                                         Color="Black" />
                                                         </Border.Effect>
+                                                        <Border
+                                                                Margin="4"
+                                                                Background="{DynamicResource TextBrush}"
+                                                                BorderBrush="{DynamicResource TextBrush}"
+                                                                BorderThickness="0"
+                                                                CornerRadius="100"
+                                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                                                 </Border>
                                                 <TextBlock
                                                         Margin="0"
@@ -272,11 +279,11 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-6"
-                                                        Background="{DynamicResource TextBrush}"
-                                                        BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="2"
-                                                        CornerRadius="40"
+                                                        Margin="-10"
+                                                        Background="#00000000"
+                                                        BorderBrush="{DynamicResource PrimaryBrush}"
+                                                        BorderThickness="4"
+                                                        CornerRadius="50"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -287,6 +294,13 @@
                                                                         ShadowDepth="8"
                                                                         Color="Black" />
                                                         </Border.Effect>
+                                                        <Border
+                                                                Margin="4"
+                                                                Background="{DynamicResource TextBrush}"
+                                                                BorderBrush="{DynamicResource TextBrush}"
+                                                                BorderThickness="0"
+                                                                CornerRadius="42"
+                                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                                                 </Border>
                                                 <TextBlock
                                                         Margin="38,4,38,10"
