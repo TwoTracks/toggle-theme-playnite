@@ -304,7 +304,7 @@
                                                                     HorizontalAlignment="Left"
                                                                     VerticalAlignment="Center"
                                                                     Source="{Binding Icon}"
-                                                                    Stretch="Uniform">
+                                                                    Stretch="UniformToFill">
                                                                     <Image.Style>
                                                                         <Style TargetType="Image">
                                                                             <Style.Triggers>
@@ -832,6 +832,8 @@
                                     MinWidth="220"
                                     Margin="2"
                                     HorizontalContentAlignment="Center"
+                                    pbeh:FocusBahaviors.FocusBinding="True"
+                                    pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                     BorderThickness="2">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
@@ -850,6 +852,8 @@
                                 </ButtonEx>
                                 <ButtonEx
                                     Margin="0,2,2,2"
+                                    pbeh:FocusBahaviors.FocusBinding="True"
+                                    pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                     BorderThickness="2"
                                     Command="{PluginSettings Plugin=NowPlaying,
                                                              Path=ReturnToGame}">
@@ -925,18 +929,27 @@
                                     </TextBlock>
                                 </ButtonEx>
                             </StackPanel>
-
-                            <ScrollViewerEx
-                                x:Name="PART_ScrollHtmlDescription"
+                            <HtmlTextView
+                                x:Name="PART_HtmlDescription"
+                                MaxHeight=""
                                 Margin="0,20,0,0"
-                                DockPanel.Dock="Top">
-                                <HtmlTextView
-                                    x:Name="PART_HtmlDescription"
-                                    FocusVisualStyle="{x:Null}"
-                                    HtmlFontSize="32"
-                                    HtmlForeground="{DynamicResource TextColor}"
-                                    LinkForeground="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
-                            </ScrollViewerEx>
+                                DockPanel.Dock="Top"
+                                Focusable="False"
+                                HtmlFontSize="32"
+                                HtmlForeground="{DynamicResource TextColor}"
+                                LinkForeground="{DynamicResource PrimaryColor}" />
+                            <ButtonEx
+                                Margin="8"
+                                HorizontalContentAlignment="Center"
+                                DockPanel.Dock="Bottom"
+                                Style="{DynamicResource ButtonTopMenuR16}">
+                                <TextBlock
+                                    Margin="0,-20,0,-20"
+                                    FontSize="28"
+                                    Foreground="{DynamicResource TextBrush}"
+                                    Text="&#x1F783;"
+                                    TextAlignment="Center" />
+                            </ButtonEx>
                         </DockPanel>
                     </Grid>
                 </ControlTemplate>
