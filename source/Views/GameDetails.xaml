@@ -6,6 +6,448 @@
     xmlns:pbeh="clr-namespace:Playnite.Behaviors;assembly=Playnite"
     mc:Ignorable="d">
 
+    <Style x:Key="GameDetailsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border
+                        Margin="24,16"
+                        Background="{DynamicResource ControlBackgroundDarkBrush}"
+                        BorderBrush="{DynamicResource DefaultBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="16">
+                        <Grid Margin="32,32,32,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  Game Title  -->
+                            <Grid
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Margin="0,0,-32,20"
+                                VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  Game Icon  -->
+                                <Image
+                                    Grid.Column="0"
+                                    Width="64"
+                                    Height="64"
+                                    Margin="0,0,32,0"
+                                    VerticalAlignment="Center"
+                                    Source="{Binding SelectedGame.IconObjectCached}"
+                                    Stretch="Uniform" />
+
+                                <!--  Game Title  -->
+                                <TextBlock
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{DynamicResource FontDefaultBold}"
+                                    FontSize="48"
+                                    Foreground="{DynamicResource TextBrush}"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{Binding SelectedGame.DisplayName}"
+                                    TextWrapping="Wrap">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect
+                                            Opacity="1"
+                                            RenderingBias="Quality"
+                                            ShadowDepth="2"
+                                            Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+
+                                <!--  Vertical Separator  -->
+                                <Border
+                                    Grid.Column="2"
+                                    Width="2"
+                                    Height="48"
+                                    Margin="16,0,16,0"
+                                    VerticalAlignment="Center"
+                                    Background="{DynamicResource TextBrush}"
+                                    Opacity="0.3" />
+
+                                <!--  Developers  -->
+                                <TextBlock
+                                    Grid.Column="3"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{DynamicResource FontDefault}"
+                                    FontSize="44"
+                                    Foreground="{DynamicResource TextBrush}"
+                                    Opacity="0.7"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{Binding SelectedGame.Developers, Converter={StaticResource ListToStringConverter}}"
+                                    TextWrapping="Wrap">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect
+                                            Opacity="1"
+                                            RenderingBias="Quality"
+                                            ShadowDepth="2"
+                                            Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+
+                                <!--  Vertical Separator  -->
+                                <Border
+                                    Grid.Column="4"
+                                    Width="2"
+                                    Height="48"
+                                    Margin="16,0,16,0"
+                                    VerticalAlignment="Center"
+                                    Background="{DynamicResource TextBrush}"
+                                    Opacity="0.3">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding SelectedGame.Tags[0]}" Value="{x:Null}">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                </Border>
+
+                                <!--  Tags (First 5) - Takes remaining space  -->
+                                <Grid
+                                    Grid.Column="5"
+                                    VerticalAlignment="Center"
+                                    ClipToBounds="True">
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding SelectedGame.Tags[0]}" Value="{x:Null}">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                        <!--  Tag 1  -->
+                                        <Border
+                                            Margin="0,0,8,0"
+                                            Padding="12,6"
+                                            Background="#40808080"
+                                            CornerRadius="12">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedGame.Tags[0]}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefault}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource TextBrush}"
+                                                Text="{Binding SelectedGame.Tags[0].Name}" />
+                                        </Border>
+
+                                        <!--  Tag 2  -->
+                                        <Border
+                                            Margin="0,0,8,0"
+                                            Padding="12,6"
+                                            Background="#40808080"
+                                            CornerRadius="12">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedGame.Tags[1]}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefault}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource TextBrush}"
+                                                Text="{Binding SelectedGame.Tags[1].Name}" />
+                                        </Border>
+
+                                        <!--  Tag 3  -->
+                                        <Border
+                                            Margin="0,0,8,0"
+                                            Padding="12,6"
+                                            Background="#40808080"
+                                            CornerRadius="12">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedGame.Tags[2]}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefault}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource TextBrush}"
+                                                Text="{Binding SelectedGame.Tags[2].Name}" />
+                                        </Border>
+
+                                        <!--  Tag 4  -->
+                                        <Border
+                                            Margin="0,0,8,0"
+                                            Padding="12,6"
+                                            Background="#40808080"
+                                            CornerRadius="12">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedGame.Tags[3]}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefault}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource TextBrush}"
+                                                Text="{Binding SelectedGame.Tags[3].Name}" />
+                                        </Border>
+
+                                        <!--  Tag 5  -->
+                                        <Border
+                                            Margin="0,0,8,0"
+                                            Padding="12,6"
+                                            Background="#40808080"
+                                            CornerRadius="12">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedGame.Tags[4]}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefault}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource TextBrush}"
+                                                Text="{Binding SelectedGame.Tags[4].Name}" />
+                                        </Border>
+                                        <!--  Padder for fade  -->
+                                        <Border
+                                            Width="512"
+                                            Height="16"
+                                            Background="{DynamicResource ControlBackgroundDarkBrush}" />
+                                    </StackPanel>
+
+                                    <Grid.OpacityMask>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="White" />
+                                            <GradientStop Offset="0.85" Color="White" />
+                                            <GradientStop Offset="1" Color="Transparent" />
+                                        </LinearGradientBrush>
+                                    </Grid.OpacityMask>
+                                </Grid>
+                            </Grid>
+
+                            <!--  Left side: Description with scroll  -->
+                            <ScrollViewerEx
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Height="928"
+                                Margin="0,0,72,0"
+                                pbeh:FocusBahaviors.FocusBinding="True"
+                                pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                                HorizontalScrollBarVisibility="Disabled"
+                                VerticalScrollBarVisibility="Auto">
+                                <HtmlTextView
+                                    x:Name="PART_HtmlDescription"
+                                    FocusVisualStyle="{x:Null}"
+                                    HtmlFontSize="32"
+                                    HtmlForeground="{DynamicResource TextColor}"
+                                    HtmlText="{Binding SelectedGame.Description}"
+                                    IsEnabled="False"
+                                    IsHitTestVisible="False"
+                                    LinkForeground="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
+                            </ScrollViewerEx>
+
+                            <!--  Right side: Game details  -->
+                            <StackPanel
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Width="360"
+                                Orientation="Vertical">
+
+                                <!--  Playtime entry  -->
+                                <StackPanel Margin="0,0,0,48" Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0,0,12,0"
+                                        Opacity="0.75"
+                                        Style="{StaticResource FluentIconStyle}"
+                                        Text="&#xe916;" />
+                                    <StackPanel>
+                                        <TextBlock
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{Binding SelectedGame.Playtime, Converter={StaticResource PlayTimeToStringConverter}}" />
+                                        <TextBlock
+                                            FontSize="22"
+                                            Opacity="0.75"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCTimePlayed}" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!--  Last Activity entry  -->
+                                <StackPanel Margin="0,0,0,48" Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0,0,12,0"
+                                        Opacity="0.75"
+                                        Style="{StaticResource FluentIconStyle}"
+                                        Text="&#xec92;" />
+                                    <StackPanel>
+                                        <TextBlock
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{Binding SelectedGame.LastActivity, Converter={StaticResource DateTimeToLastPlayedConverter}}" />
+                                        <TextBlock
+                                            FontSize="22"
+                                            Opacity="0.75"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCGameLastActivityTitle}" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!--  Release Year entry  -->
+                                <StackPanel Margin="0,0,0,48" Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0,0,12,0"
+                                        Opacity="0.75"
+                                        Style="{StaticResource FluentIconStyle}"
+                                        Text="&#xe787;" />
+                                    <StackPanel>
+                                        <TextBlock
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{Binding SelectedGame.ReleaseYear}" />
+                                        <TextBlock
+                                            FontSize="22"
+                                            Opacity="0.75"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCGameReleaseDateTitle}" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!--  Library entry  -->
+                                <StackPanel Margin="0,0,0,48" Orientation="Horizontal">
+                                    <Image
+                                        Width="60"
+                                        Height="60"
+                                        Margin="0,0,12,0"
+                                        VerticalAlignment="Top"
+                                        Opacity="0.75"
+                                        Source="{ThemeFileBinding SelectedGame.Library,
+                                                                  PathFormat='Icons/Library/{0}.png'}"
+                                        Stretch="UniformToFill" />
+                                    <StackPanel>
+                                        <TextBlock
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{Binding SelectedGame.Library}" />
+                                        <TextBlock
+                                            FontSize="22"
+                                            Opacity="0.75"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCGameProviderTitle}" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!--  Achievement entry  -->
+                                <StackPanel Margin="0,0,0,48" Orientation="Horizontal">
+                                    <StackPanel.Style>
+                                        <Style TargetType="StackPanel">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=HasData}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </StackPanel.Style>
+                                    <TextBlock
+                                        Margin="0,0,12,0"
+                                        Opacity="0.75"
+                                        Style="{StaticResource FluentIconStyle}"
+                                        Text="&#xe734;" />
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=SuccessStory,
+                                                                      Path=Unlocked,
+                                                                      FallbackValue='-'}" />
+                                            <TextBlock
+                                                Margin="2,0,2,0"
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="/" />
+                                            <TextBlock
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=SuccessStory,
+                                                                      Path=Total,
+                                                                      FallbackValue='-'}" />
+                                            <TextBlock
+                                                Margin="5,0,0,0"
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=SuccessStory,
+                                                                      Path=Percent,
+                                                                      FallbackValue='-',
+                                                                      StringFormat='({0}%)'}" />
+                                        </StackPanel>
+                                        <TextBlock
+                                            FontSize="22"
+                                            Opacity="0.75"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCSuccessStoryAchievements}" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="GameAchievementsWindowStyle" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -592,17 +1034,23 @@
                             </Image.OpacityMask>
                         </Image>
 
-                        <DockPanel
+                        <Grid
                             Grid.Row="1"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
-                            Margin="32,32,0,0"
-                            HorizontalAlignment="Left">
+                            Margin="32,32,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
                             <StackPanel
+                                Grid.Row="0"
                                 Margin="0,0,0,20"
                                 VerticalAlignment="Center"
-                                DockPanel.Dock="Top"
                                 Orientation="Horizontal">
                                 <StackPanel.Style>
                                     <Style TargetType="StackPanel">
@@ -629,10 +1077,9 @@
                                 </TextBlock>
                             </StackPanel>
 
-
                             <StackPanel
+                                Grid.Row="1"
                                 Margin="0,0,20,20"
-                                DockPanel.Dock="Top"
                                 Orientation="Horizontal">
 
                                 <!--  Playtime entry  -->
@@ -823,9 +1270,9 @@
                             </StackPanel>
 
                             <StackPanel
+                                Grid.Row="2"
                                 pbeh:FocusBahaviors.FocusBinding="True"
                                 pbeh:FocusBahaviors.OnVisibilityFocus="True"
-                                DockPanel.Dock="Top"
                                 Orientation="Horizontal">
                                 <ButtonEx
                                     x:Name="PART_ButtonContext"
@@ -929,20 +1376,38 @@
                                     </TextBlock>
                                 </ButtonEx>
                             </StackPanel>
-                            <HtmlTextView
-                                x:Name="PART_HtmlDescription"
-                                MaxHeight=""
+
+                            <Grid
+                                Grid.Row="3"
+                                MaxHeight="330"
                                 Margin="0,20,0,0"
-                                DockPanel.Dock="Top"
-                                Focusable="False"
-                                HtmlFontSize="32"
-                                HtmlForeground="{DynamicResource TextColor}"
-                                LinkForeground="{DynamicResource PrimaryColor}" />
+                                ClipToBounds="True">
+                                <HtmlTextView
+                                    x:Name="PART_HtmlDescription"
+                                    VerticalAlignment="Top"
+                                    Focusable="False"
+                                    HtmlFontSize="32"
+                                    HtmlForeground="{DynamicResource TextColor}"
+                                    IsEnabled="False"
+                                    IsHitTestVisible="False"
+                                    LinkForeground="{DynamicResource PrimaryColor}" />
+                                <Grid.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="White" />
+                                        <GradientStop Offset="0.7" Color="White" />
+                                        <GradientStop Offset="1" Color="Transparent" />
+                                    </LinearGradientBrush>
+                                </Grid.OpacityMask>
+                            </Grid>
+
                             <ButtonEx
+                                Grid.Row="4"
                                 Margin="8"
                                 HorizontalContentAlignment="Center"
-                                DockPanel.Dock="Bottom"
-                                Style="{DynamicResource ButtonTopMenuR16}">
+                                Command="{PluginSettings Plugin=ThemeOptions,
+                                                         Path=OpenWindow[GameDetailsWindowStyle]}"
+                                Style="{DynamicResource ButtonTopMenuR16}"
+                                Tag="{DynamicResource LOCSettingsGameDetailsLabel}">
                                 <TextBlock
                                     Margin="0,-20,0,-20"
                                     FontSize="28"
@@ -950,7 +1415,7 @@
                                     Text="&#x1F783;"
                                     TextAlignment="Center" />
                             </ButtonEx>
-                        </DockPanel>
+                        </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
