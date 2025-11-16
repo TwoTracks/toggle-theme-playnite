@@ -50,6 +50,118 @@
         </Setter>
     </Style>
 
+    <Style x:Key="CircleProgressBarStyle" TargetType="ProgressBar">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#20FFFFFF" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid x:Name="PART_Track">
+
+                            <!--  Progress Indicator with circle  -->
+                            <Border
+                                x:Name="PART_Indicator"
+                                HorizontalAlignment="Left"
+                                Background="Transparent">
+                                <!--  Circle aligned to the right edge of the indicator  -->
+                                <Grid
+                                    Margin="0,0,-16,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center">
+                                    <!--  Outer circle at 75% opacity  -->
+                                    <Ellipse
+                                        Width="32"
+                                        Height="32"
+                                        Fill="{TemplateBinding Foreground}"
+                                        Opacity="0.75" />
+
+                                    <!--  Inner circle at 100% opacity  -->
+                                    <Ellipse
+                                        Width="24"
+                                        Height="24"
+                                        Margin="4"
+                                        Fill="{TemplateBinding Foreground}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LabeledProgressBarStyle" TargetType="ProgressBar">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!--  Progress Track and Indicator with rounded edges  -->
+                        <Border
+                            Grid.Row="0"
+                            Height="16"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8"
+                            SnapsToDevicePixels="true">
+                            <Grid x:Name="PART_Track" ClipToBounds="true">
+                                <Rectangle
+                                    x:Name="PART_Indicator"
+                                    HorizontalAlignment="Left"
+                                    Fill="{TemplateBinding Foreground}"
+                                    RadiusX="8"
+                                    RadiusY="8">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush Stretch="Fill">
+                                            <VisualBrush.Visual>
+                                                <Border
+                                                    Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Grid}}"
+                                                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
+                                                    Background="Black"
+                                                    CornerRadius="8" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+
+                        <!--  Label aligned to the right edge of indicator, below the progress bar  -->
+                        <Grid Grid.Row="1">
+                            <Border
+                                Width="{Binding ActualWidth, ElementName=PART_Indicator}"
+                                HorizontalAlignment="Left"
+                                Background="Transparent">
+                                <TextBlock
+                                    Margin="0,0,8,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    FontSize="24"
+                                    Foreground="White"
+                                    Text="{TemplateBinding Tag}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style
         x:Key="BarRound12"
         BasedOn="{StaticResource {x:Type ProgressBar}}"

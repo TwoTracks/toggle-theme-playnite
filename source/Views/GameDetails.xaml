@@ -950,32 +950,6 @@
                             Grid.ColumnSpan="5"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top" />
-                        <ButtonEx
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Height="72"
-                            MinWidth="72"
-                            Margin="24,32,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                            Style="{DynamicResource ButtonTopMenu}">
-                            <ButtonEx.Effect>
-                                <DropShadowEffect
-                                    BlurRadius="10"
-                                    Direction="315"
-                                    Opacity="0.75"
-                                    ShadowDepth="0"
-                                    Color="Black" />
-                            </ButtonEx.Effect>
-                            <TextBlock
-                                Height="54"
-                                Margin="6,0,6,6"
-                                VerticalAlignment="Bottom"
-                                FontSize="56"
-                                Style="{StaticResource FluentIconStyle}"
-                                Text="&#xf0b0;" />
-                        </ButtonEx>
                         <ContentControl
                             x:Name="ExtraMetadataLoader_LogoLoaderControl"
                             Grid.Row="0"
@@ -1040,6 +1014,7 @@
                             Grid.ColumnSpan="2"
                             Margin="32,32,0,0">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -1379,6 +1354,87 @@
 
                             <Grid
                                 Grid.Row="3"
+                                Height="48"
+                                Margin="0,64,16,16">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasDataEmpty}" Value="True">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasData}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="64" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Grid.Column="0"
+                                    Width="48"
+                                    Height="48"
+                                    Margin="0,-32,0,0"
+                                    Opacity="0.75"
+                                    Source="{ThemeFile 'Icons/hltb.png'}" />
+                                <Grid
+                                    Grid.Column="1"
+                                    Height="48"
+                                    Margin="0">
+                                    <!--  Completionist (Background/Longest)  -->
+                                    <ProgressBar
+                                        Foreground="#4ade80"
+                                        Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                 Path=Completionist}"
+                                        Style="{StaticResource LabeledProgressBarStyle}"
+                                        Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                             Path=CompletionistFormat}"
+                                        Value="{PluginSettings Plugin=HowLongToBeat,
+                                                               Path=Completionist}" />
+
+                                    <!--  Main + Extra (Middle)  -->
+                                    <ProgressBar
+                                        Background="Transparent"
+                                        Foreground="#818cf8"
+                                        Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                 Path=Completionist}"
+                                        Style="{StaticResource LabeledProgressBarStyle}"
+                                        Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                             Path=MainExtraFormat}"
+                                        Value="{PluginSettings Plugin=HowLongToBeat,
+                                                               Path=MainExtra}" />
+
+                                    <!--  Main Story (Foreground/Shortest)  -->
+                                    <ProgressBar
+                                        Background="Transparent"
+                                        Foreground="#22d3ee"
+                                        Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                 Path=Completionist}"
+                                        Style="{StaticResource LabeledProgressBarStyle}"
+                                        Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                             Path=MainStoryFormat}"
+                                        Value="{PluginSettings Plugin=HowLongToBeat,
+                                                               Path=MainStory}" />
+                                    <!--  Your progress  -->
+                                    <ProgressBar
+                                        Margin="0,-32,0,0"
+                                        Foreground="#FFFFFF"
+                                        Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                 Path=Completionist}"
+                                        Opacity="0.75"
+                                        Style="{StaticResource CircleProgressBarStyle}"
+                                        Value="{Binding Playtime, Mode=OneWay}" />
+                                </Grid>
+                            </Grid>
+
+                            <Grid
+                                Grid.Row="4"
                                 MaxHeight="330"
                                 Margin="0,20,0,0"
                                 ClipToBounds="True">
@@ -1401,7 +1457,7 @@
                             </Grid>
 
                             <ButtonEx
-                                Grid.Row="4"
+                                Grid.Row="5"
                                 Margin="8"
                                 HorizontalContentAlignment="Center"
                                 Command="{PluginSettings Plugin=ThemeOptions,
@@ -1416,6 +1472,33 @@
                                     TextAlignment="Center" />
                             </ButtonEx>
                         </Grid>
+                        <ButtonEx
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Height="72"
+                            MinWidth="72"
+                            Margin="24,32,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            pbeh:FocusBahaviors.OnVisibilityFocus="False"
+                            Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                            Style="{DynamicResource ButtonTopMenu}">
+                            <ButtonEx.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="10"
+                                    Direction="315"
+                                    Opacity="0.75"
+                                    ShadowDepth="0"
+                                    Color="Black" />
+                            </ButtonEx.Effect>
+                            <TextBlock
+                                Height="54"
+                                Margin="6,0,6,6"
+                                VerticalAlignment="Bottom"
+                                FontSize="56"
+                                Style="{StaticResource FluentIconStyle}"
+                                Text="&#xf0b0;" />
+                        </ButtonEx>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
