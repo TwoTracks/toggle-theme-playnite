@@ -285,15 +285,96 @@
                                 pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                 HorizontalScrollBarVisibility="Disabled"
                                 VerticalScrollBarVisibility="Auto">
-                                <HtmlTextView
-                                    x:Name="PART_HtmlDescription"
-                                    FocusVisualStyle="{x:Null}"
-                                    HtmlFontSize="32"
-                                    HtmlForeground="{DynamicResource TextColor}"
-                                    HtmlText="{Binding SelectedGame.Description}"
-                                    IsEnabled="False"
-                                    IsHitTestVisible="False"
-                                    LinkForeground="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
+                                <StackPanel Orientation="Vertical">
+
+                                    <Grid Height="48" Margin="0,24,16,64">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasDataEmpty}" Value="True">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasData}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="64" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="48"
+                                            Height="48"
+                                            Margin="0,-32,0,0"
+                                            Opacity="0.75"
+                                            Source="{ThemeFile 'Icons/hltb.png'}" />
+                                        <Grid
+                                            Grid.Column="1"
+                                            Height="48"
+                                            Margin="0">
+                                            <!--  Completionist (Background/Longest)  -->
+                                            <ProgressBar
+                                                Foreground="#4ade80"
+                                                Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                         Path=Completionist}"
+                                                Style="{StaticResource LabeledProgressBarStyle}"
+                                                Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                                     Path=CompletionistFormat}"
+                                                Value="{PluginSettings Plugin=HowLongToBeat,
+                                                                       Path=Completionist}" />
+
+                                            <!--  Main + Extra (Middle)  -->
+                                            <ProgressBar
+                                                Background="Transparent"
+                                                Foreground="#818cf8"
+                                                Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                         Path=Completionist}"
+                                                Style="{StaticResource LabeledProgressBarStyle}"
+                                                Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                                     Path=MainExtraFormat}"
+                                                Value="{PluginSettings Plugin=HowLongToBeat,
+                                                                       Path=MainExtra}" />
+
+                                            <!--  Main Story (Foreground/Shortest)  -->
+                                            <ProgressBar
+                                                Background="Transparent"
+                                                Foreground="#22d3ee"
+                                                Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                         Path=Completionist}"
+                                                Style="{StaticResource LabeledProgressBarStyle}"
+                                                Tag="{PluginSettings Plugin=HowLongToBeat,
+                                                                     Path=MainStoryFormat}"
+                                                Value="{PluginSettings Plugin=HowLongToBeat,
+                                                                       Path=MainStory}" />
+                                            <!--  Your progress  -->
+                                            <ProgressBar
+                                                Margin="0,-32,0,0"
+                                                Foreground="#FFFFFF"
+                                                Maximum="{PluginSettings Plugin=HowLongToBeat,
+                                                                         Path=Completionist}"
+                                                Opacity="0.75"
+                                                Style="{StaticResource CircleProgressBarStyle}"
+                                                Value="{Binding SelectedGame.Playtime, Mode=OneWay}" />
+                                        </Grid>
+                                    </Grid>
+                                    <HtmlTextView
+                                        x:Name="PART_HtmlDescription"
+                                        FocusVisualStyle="{x:Null}"
+                                        HtmlFontSize="32"
+                                        HtmlForeground="{DynamicResource TextColor}"
+                                        HtmlText="{Binding SelectedGame.Description}"
+                                        IsEnabled="False"
+                                        IsHitTestVisible="False"
+                                        LinkForeground="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
+                                </StackPanel>
+
                             </ScrollViewerEx>
 
                             <!--  Right side: Game details  -->
@@ -1246,6 +1327,7 @@
 
                             <StackPanel
                                 Grid.Row="2"
+                                Margin="0,0,0,48"
                                 pbeh:FocusBahaviors.FocusBinding="True"
                                 pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                 Orientation="Horizontal">
@@ -1355,7 +1437,7 @@
                             <Grid
                                 Grid.Row="3"
                                 Height="48"
-                                Margin="0,64,16,16">
+                                Margin="0,0,16,0">
                                 <Grid.Style>
                                     <Style TargetType="Grid">
                                         <Setter Property="Visibility" Value="Visible" />
@@ -1367,6 +1449,9 @@
                                                 <Setter Property="Visibility" Value="Collapsed" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasData}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[HowLongToBeat]}" Value="False">
                                                 <Setter Property="Visibility" Value="Collapsed" />
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -1436,7 +1521,7 @@
                             <Grid
                                 Grid.Row="4"
                                 MaxHeight="330"
-                                Margin="0,20,0,0"
+                                Margin="0,16,0,0"
                                 ClipToBounds="True">
                                 <HtmlTextView
                                     x:Name="PART_HtmlDescription"

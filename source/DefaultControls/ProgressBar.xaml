@@ -148,10 +148,11 @@
                                 HorizontalAlignment="Left"
                                 Background="Transparent">
                                 <TextBlock
-                                    Margin="0,0,8,0"
+                                    Margin="0,0,12,0"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
-                                    FontSize="24"
+                                    FontFamily="{DynamicResource FontDefaultBold}"
+                                    FontSize="16"
                                     Foreground="White"
                                     Text="{TemplateBinding Tag}" />
                             </Border>
