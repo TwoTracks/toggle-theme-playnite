@@ -202,6 +202,11 @@ Variables:
     LocKey: LOCZoomCovers
     Type: Boolean
     Default: true
+  Banners:
+    Title: Show Platform and Library Banners
+    LocKey: LOCBanners
+    Type: Boolean
+    Default: false
   GameDetailsHeader:
     Title: Game Details Info
     Type: Header
