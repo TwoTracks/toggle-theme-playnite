@@ -206,7 +206,7 @@
     <Content Include="Icons\Filter\Active\Sega Megadrive.png" />
     <Content Include="Icons\Filter\Active\Sega Saturn.png" />
     <Content Include="Icons\Filter\Active\Snes.png" />
-    <Content Include="Icons\Filter\Active\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation Portable.png" />
     <Content Include="Icons\Filter\Active\Sony Playstation 2.png" />
     <Content Include="Icons\Filter\Active\Sony Playstation 3.png" />
     <Content Include="Icons\Filter\Active\Sony Playstation 4.png" />
@@ -343,7 +343,7 @@
     <Content Include="Icons\Filter\Default\Sega Megadrive.png" />
     <Content Include="Icons\Filter\Default\Sega Saturn.png" />
     <Content Include="Icons\Filter\Default\Snes.png" />
-    <Content Include="Icons\Filter\Default\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation Portable.png" />
     <Content Include="Icons\Filter\Default\Sony Playstation 2.png" />
     <Content Include="Icons\Filter\Default\Sony Playstation 3.png" />
     <Content Include="Icons\Filter\Default\Sony Playstation 4.png" />
@@ -460,7 +460,7 @@
     <Content Include="Icons\Filter\Sega Megadrive.png" />
     <Content Include="Icons\Filter\Sega Saturn.png" />
     <Content Include="Icons\Filter\Snes.png" />
-    <Content Include="Icons\Filter\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Sony Playstation Portable.png" />
     <Content Include="Icons\Filter\Sony Playstation 2.png" />
     <Content Include="Icons\Filter\Sony Playstation 3.png" />
     <Content Include="Icons\Filter\Sony Playstation 4.png" />

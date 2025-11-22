@@ -103,7 +103,7 @@ module.exports = {
     'Sega Saturn': '#9575CD',
     'Sega Master System': '#FF4444',
     Snes: '#9575CD',
-    'Sony Playsation Portable': '#2196F3',
+    'Sony PlayStation Portable': '#2196F3',
     'Sony Playstation': '#2196F3',
     'Sony Playstation 2': '#2196F3',
     'Sony Playstation 3': '#2196F3',
