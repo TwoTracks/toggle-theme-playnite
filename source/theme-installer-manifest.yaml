@@ -189,3 +189,20 @@ Packages:
     Changelog:
       - ✨ Updated progress window - fixed text overflow, better readability and user communication
       - ⚠️ Requires Playnite Version 10.42 or greater (try to update Playnite before installing)
+  - Version: 1.9.1
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2025-11-23
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.1/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_1.pthm
+    Changelog:
+      - 🎨 Made button UI more consistent across views
+      - ✨ Added banner image generation and integrated banners into UI
+      - ✨ Introduced new 2-tier Game Details view with HowLongToBeat (HLTB) integration
+      - 🐛 Fixed progress bar clipping issue
+      - 🐛 Updated default button focus behavior for better controller and keyboard navigation (thanks pinn73)
+      - 🐛 Various UI fixes and polish improvements
+  - Version: 1.9.2
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2025-11-23
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_2.pthm
+    Changelog:
+      - 🐛 Fixed PSP banner bug
