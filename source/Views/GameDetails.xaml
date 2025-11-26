@@ -108,11 +108,17 @@
                                 Margin="0,0,72,0"
                                 pbeh:FocusBahaviors.FocusBinding="True"
                                 pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                                FocusVisualStyle="{x:Null}"
                                 HorizontalScrollBarVisibility="Disabled"
                                 VerticalScrollBarVisibility="Auto">
                                 <StackPanel Orientation="Vertical">
                                     <!--  Tags  -->
-                                    <Grid Margin="0,24,0,0" VerticalAlignment="Center">
+                                    <Grid
+                                        Margin="0,24,0,0"
+                                        VerticalAlignment="Center"
+                                        Focusable="False"
+                                        IsEnabled="False"
+                                        IsHitTestVisible="False">
                                         <Grid.Style>
                                             <Style TargetType="Grid">
                                                 <Setter Property="Visibility" Value="Visible" />
