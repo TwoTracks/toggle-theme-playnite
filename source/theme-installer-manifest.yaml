@@ -206,3 +206,12 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_2.pthm
     Changelog:
       - 🐛 Fixed PSP banner bug (thanks TwoTracks)
+  - Version: 1.9.3
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2025-11-26
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.3/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_3.pthm
+    Changelog:
+      - ✨ Add steam family sharing indicator (thanks TwoTracks)
+      - 🐛 Fix focus bug on Game Details pop up screen
+      - ✨ Other minor UI tweaks
+      - 🎨 Added new theme color, Platinum
