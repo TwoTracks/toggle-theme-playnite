@@ -54,5 +54,6 @@
   <sys:String x:Key="LOCColorRose">गुलाब</sys:String>
   <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">स्लेट</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">प्लैटिनम</sys:String>
   <sys:String x:Key="LOCZoomCovers">फोकस पर गेम कवर ज़ूम करें</sys:String>
 </ResourceDictionary>

@@ -148,6 +148,14 @@
             Type: SolidColorBrush
             Value: '#64748b'
         Preview: color-swatches/Slate.png
+      PlatinumOption:
+        Name: Platinum
+        LocKey: LOCColorPlatinum
+        Constants:
+          PrimaryBrush:
+            Type: SolidColorBrush
+            Value: '#f0f9ff'
+        Preview: color-swatches/Platinum.png
   ButtonPromptOption:
     Name: Button Prompts
     LocKey: LOCSettingsFullscreenButtonPrompts

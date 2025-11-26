@@ -28,5 +28,6 @@
   <sys:String x:Key="LOCColorFuchsia">Fuchsia</sys:String>
   <sys:String x:Key="LOCColorRose">Rose</sys:String>
   <sys:String x:Key="LOCColorSlate">Slate</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">Platinum</sys:String>
   <sys:String x:Key="LOCZoomCovers">Zoom Game Covers on Focus</sys:String>
 </ResourceDictionary>

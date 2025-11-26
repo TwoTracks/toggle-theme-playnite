@@ -54,5 +54,6 @@
   <sys:String x:Key="LOCColorRose">Rose</sys:String>
   <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">Ardoise</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">Platine</sys:String>
   <sys:String x:Key="LOCZoomCovers">Agrandir les jaquettes au focus</sys:String>
 </ResourceDictionary>

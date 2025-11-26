@@ -54,6 +54,7 @@
   <sys:String x:Key="LOCColorRose">Rosa</sys:String>
   <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">Pizarra</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">Platino</sys:String>
 
   <sys:String x:Key="LOCZoomCovers">Ampliar carátulas al enfocar</sys:String>
 </ResourceDictionary>

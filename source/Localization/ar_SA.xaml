@@ -54,6 +54,7 @@
   <sys:String x:Key="LOCColorRose">وردة</sys:String>
   <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">رمادي</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">بلاتين</sys:String>
 
   <sys:String x:Key="LOCZoomCovers">تكبير أغلفة الألعاب عند التركيز</sys:String>
 </ResourceDictionary>

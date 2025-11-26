@@ -54,5 +54,6 @@
   <sys:String x:Key="LOCColorRose">玫瑰色</sys:String>
   <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">石板灰</sys:String>
+  <sys:String x:Key="LOCColorPlatinum">白金</sys:String>
   <sys:String x:Key="LOCZoomCovers">聚焦时放大游戏封面</sys:String>
 </ResourceDictionary>
