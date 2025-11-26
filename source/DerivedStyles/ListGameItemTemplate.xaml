@@ -331,10 +331,10 @@
                                             <Setter Property="BorderBrush" Value="#FCAF17" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Library}" Value="Steam Deck">
-                                            <Setter Property="BorderBrush" Value="#4A90E2" />
+                                            <Setter Property="BorderBrush" Value="#1A9FFF" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Library}" Value="Steam">
-                                            <Setter Property="BorderBrush" Value="#4A90E2" />
+                                            <Setter Property="BorderBrush" Value="#1A9FFF" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Library}" Value="Ubisoft Connect">
                                             <Setter Property="BorderBrush" Value="#0084FF" />
@@ -353,6 +353,32 @@
                             </Border.Style>
 
                             <Grid>
+                                <!--  Features Image  -->
+                                <Border
+                                    Width="48"
+                                    Height="36"
+                                    Margin="40,0,0,0"
+                                    Padding="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Background="{DynamicResource TextBrush}"
+                                    CornerRadius="0,0,12,0">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Source.Name}" Value="Steam Family Sharing">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Image
+                                        Width="36"
+                                        Height="36"
+                                        Source="{ThemeFile Icons/Filter/Default/Steam Family Sharing.png}" />
+                                </Border>
+
                                 <!--  Library Image (default)  -->
                                 <Image
                                     Width="64"
