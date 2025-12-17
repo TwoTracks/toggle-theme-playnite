@@ -303,7 +303,7 @@
                                         <DataTrigger Binding="{Binding Library}" Value="Humble">
                                             <Setter Property="BorderBrush" Value="#FF4444" />
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Binding Library}" Value="Itch.Io">
+                                        <DataTrigger Binding="{Binding Library}" Value="itch.io">
                                             <Setter Property="BorderBrush" Value="#FA5C5C" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Library}" Value="Legacy Games">
