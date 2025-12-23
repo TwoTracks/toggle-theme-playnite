@@ -43,6 +43,9 @@
           PrimaryBrush:
             Type: SolidColorBrush
             Value: '#eab308'
+          PrimaryContrastBrush:
+            Type: SolidColorBrush
+            Value: '#242424'
         Preview: color-swatches/Yellow.png
       PurpleOption:
         Name: Purple
@@ -99,6 +102,9 @@
           PrimaryBrush:
             Type: SolidColorBrush
             Value: '#f59e0b'
+          PrimaryContrastBrush:
+            Type: SolidColorBrush
+            Value: '#242424'
         Preview: color-swatches/Amber.png
       LimeOption:
         Name: Lime
@@ -107,6 +113,9 @@
           PrimaryBrush:
             Type: SolidColorBrush
             Value: '#84cc16'
+          PrimaryContrastBrush:
+            Type: SolidColorBrush
+            Value: '#242424'
         Preview: color-swatches/Lime.png
       EmeraldOption:
         Name: Emerald
@@ -155,6 +164,9 @@
           PrimaryBrush:
             Type: SolidColorBrush
             Value: '#f0f9ff'
+          PrimaryContrastBrush:
+            Type: SolidColorBrush
+            Value: '#242424'
         Preview: color-swatches/Platinum.png
   ButtonPromptOption:
     Name: Button Prompts

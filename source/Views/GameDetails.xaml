@@ -1432,7 +1432,7 @@
                                 <TextBlock
                                     Margin="0,-20,0,-20"
                                     FontSize="28"
-                                    Foreground="{DynamicResource TextBrush}"
+                                    Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ButtonEx}}"
                                     Text="&#x1F783;"
                                     TextAlignment="Center" />
                             </ButtonEx>
