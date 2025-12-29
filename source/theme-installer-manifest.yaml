@@ -221,3 +221,10 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.4/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_4.pthm
     Changelog:
       - 🐛 Fix missing platinum color scheme image
+  - Version: 1.9.5
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2025-12-23
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.5/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_5.pthm
+    Changelog:
+      - 🐛 Fix Itch.io casing issue (thanks TwoTracks)
+      - ✨ Enhanced focus indicator visibility across all button styles
