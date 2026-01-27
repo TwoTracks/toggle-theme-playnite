@@ -355,23 +355,22 @@
                             <Grid>
                                 <!--  Features Image  -->
                                 <Border
-                                    Margin="0,0,0,0"
-                                    Padding="0,0,0,0"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Top"                                    
-                                    CornerRadius="0,0,0,0">
-                                    <Border.Style>
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    CornerRadius="12,12,12,12">
+                                       <Border.Style>
                                         <Style TargetType="Border">
                                             <Setter Property="Visibility" Value="Collapsed" />
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding CompletionStatus.Name}" Value="Not Played">
-                                                    <Setter Property="Visibility" Value="Visible" />
+                                                <DataTrigger Binding="{Binding Playtime}" Value="0">
+                                                    <Setter Property="Visibility" Value="Visible"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Border.Style>
                                     <Image
-                                        Source="{ThemeFile Icons/Filter/Shrink Wrap.png}" />
+                                        Source="{ThemeFile Icons/Filter/Shrink Wrap.png}"
+                                 Stretch="Fill"/>
                                 </Border>
                                 <Border
                                     Width="38"
